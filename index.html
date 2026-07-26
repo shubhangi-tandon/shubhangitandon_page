@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shubhangi Tandon — Applied AI Research</title>
+<meta name="description" content="Applied AI research leader working on multimodal search, retrieval, and generative AI for commerce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEFEA;
+    --paper-2:#E4E7E0;
+    --ink:#12180F;
+    --ink-soft:#4C5548;
+    --ink-faint:#8C9486;
+    --rule:#CFD4C9;
+    --signal:#1B4DE4;
+    --patent:#1B4DE4;
+    --paper-tag:#6B4FA8;
+    --talk:#A8542B;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Spectral",Georgia,serif;
+    font-weight:400;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- masthead ---------- */
+  header{padding:64px 0 0;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 28px;
+  }
+  h1{
+    font-size:clamp(34px,7vw,52px);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    margin:0 0 22px;
+  }
+  .thesis{
+    font-size:clamp(19px,2.6vw,23px);
+    line-height:1.5;
+    color:var(--ink-soft);
+    max-width:34em;
+    margin:0 0 18px;
+    font-weight:300;
+  }
+  .thesis em{font-style:italic;color:var(--ink);}
+  .meta{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    letter-spacing:.02em;
+    margin:0 0 40px;
+  }
+  .meta a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule);}
+  .meta a:hover{color:var(--signal);border-color:var(--signal);}
+  .rule{height:1px;background:var(--rule);border:0;margin:0;}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0;}
+  .sec-label{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 26px;
+  }
+  h2{
+    font-size:clamp(24px,3.4vw,30px);
+    font-weight:600;
+    letter-spacing:-.015em;
+    line-height:1.2;
+    margin:0 0 18px;
+  }
+  p{margin:0 0 18px;max-width:38em;}
+  p.lead{font-size:18.5px;}
+  a.inline{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--signal);}
+  a.inline:hover{color:var(--signal);}
+
+  /* ---------- ledger ---------- */
+  .filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 6px;
+  }
+  .filters button{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:7px 13px;
+    border:1px solid var(--rule);
+    background:transparent;
+    color:var(--ink-soft);
+    cursor:pointer;
+    border-radius:2px;
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .filters button:hover{border-color:var(--ink-soft);}
+  .filters button[aria-pressed="true"]{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:var(--paper);
+  }
+  .filters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+
+  .ledger{margin:26px 0 0;border-top:1px solid var(--rule);}
+  .entry{
+    display:grid;
+    grid-template-columns:78px 1fr;
+    gap:0 22px;
+    padding:20px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:start;
+  }
+  .entry[hidden]{display:none;}
+  .yr{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    padding-top:5px;
+    letter-spacing:.02em;
+  }
+  .tag{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    display:inline-block;
+    margin:0 0 5px;
+  }
+  .t-patent{color:var(--patent);}
+  .t-paper{color:var(--paper-tag);}
+  .t-talk{color:var(--talk);}
+  .t-award{color:#3E7A4E;}
+  .title{
+    font-size:17.5px;
+    line-height:1.4;
+    margin:0 0 5px;
+    font-weight:400;
+  }
+  .title a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;}
+  .title a:hover{border-color:var(--signal);color:var(--signal);}
+  .sub{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    line-height:1.55;
+    margin:0;
+  }
+  .status{
+    display:inline-block;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    border:1px solid var(--rule);
+    padding:1px 6px;
+    border-radius:2px;
+    color:var(--ink-faint);
+    margin-left:6px;
+    vertical-align:1px;
+  }
+  .count{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11.5px;
+    color:var(--ink-faint);
+    margin:18px 0 0;
+  }
+
+  /* ---------- writing ---------- */
+  .empty{
+    border:1px dashed var(--rule);
+    padding:26px;
+    border-radius:3px;
+    background:var(--paper-2);
+  }
+  .empty p{margin:0;color:var(--ink-soft);max-width:34em;}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:44px 0 72px;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    line-height:1.8;
+  }
+  footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule);}
+  footer a:hover{color:var(--signal);border-color:var(--signal);}
+  .disclaimer{margin-top:16px;font-size:11px;}
+
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .entry{grid-template-columns:56px 1fr;gap:0 14px;}
+    header{padding-top:44px;}
+    section{padding:40px 0;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Applied AI Research</p>
+    <h1>Shubhangi Tandon</h1>
+    <p class="thesis">I work on how people find things. Multimodal search, retrieval, and generative AI for commerce, and the slow work of getting a model from <em>promising</em> to <em>in production</em>.</p>
+    <p class="meta">Senior Manager, Applied Research at eBay &nbsp;·&nbsp; San Francisco Bay Area<br>
+      <a href="https://www.linkedin.com/in/shubhangi-tandon/">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="https://scholar.google.com/citations?user=nGt-duQAAAAJ">Google Scholar</a> &nbsp;·&nbsp;
+      <a href="mailto:shubhi194@gmail.com">Email</a>
+    </p>
+  </div>
+</header>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <p class="sec-label">About</p>
+    <p class="lead">I lead the applied research team for Content Understanding at eBay, a group of researchers across San Jose and Bangalore working on visual and multimodal search, generative AI for selling, catalog matching, and pricing.</p>
+    <p>Before managing I spent six years as a researcher on search: embedding based retrieval, ranking, visual search, and natural language understanding of queries. Most of what I have built sits in the gap between a model that works in a notebook and a system that serves millions of people under a latency budget. That gap is where I find the work interesting, and it is where most research quietly dies.</p>
+    <p>Lately I have been building research infrastructure as much as models. Autonomous training and evaluation running as reusable skills on our own GPUs, and tooling that reads experiment logs and suggests what to try next. Research teams lose more time between experiments than during them.</p>
+    <p>Earlier: a master's at UC Santa Cruz, where I worked in the Natural Language and Dialogue Systems Lab on stylistic variation in language generation, and four years at Goldman Sachs building compliance systems.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <p class="sec-label">Record</p>
+    <h2>Patents, papers, and talks</h2>
+    <p>A dated record of the work, most recent first.</p>
+
+    <div class="filters" role="group" aria-label="Filter record by type">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="patent" aria-pressed="false">Patents</button>
+      <button type="button" data-f="paper" aria-pressed="false">Papers</button>
+      <button type="button" data-f="talk" aria-pressed="false">Talks</button>
+      <button type="button" data-f="award" aria-pressed="false">Awards</button>
+    </div>
+
+    <div class="ledger" id="ledger"></div>
+    <p class="count" id="count"></p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <p class="sec-label">Writing</p>
+    <h2>Notes on retrieval and research practice</h2>
+    <div class="empty">
+      <p>Nothing published here yet. First pieces planned: what breaks when you put a vision language model in a live search path, and why research teams lose most of their time between experiments rather than during them.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<footer>
+  <div class="wrap">
+    <a href="mailto:shubhi194@gmail.com">shubhi194@gmail.com</a><br>
+    <a href="https://www.linkedin.com/in/shubhangi-tandon/">LinkedIn</a> ·
+    <a href="https://scholar.google.com/citations?user=nGt-duQAAAAJ">Google Scholar</a> ·
+    <a href="https://patents.google.com/?inventor=Shubhangi+Tandon">Patents</a>
+    <p class="disclaimer">Views are my own and do not represent my employer.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   EDIT HERE. Add a new line to this list and the page updates.
+   type: "patent" | "paper" | "talk" | "award"
+   link and status are optional. Newest first.
+   ============================================================ */
+var RECORD = [
+
+  { year:2026, type:"patent", title:"AI Based Photo Guidance for E-Commerce Item Listing",
+    sub:"Filed May 2026 \u00b7 Assignee eBay", status:"Filed" },
+
+  { year:2026, type:"patent", title:"Multimodal Query Routing for Agentic Search",
+    sub:"Filed May 2026 \u00b7 Assignee eBay", status:"Filed" },
+
+  { year:2026, type:"talk", title:"Persona based automated data labelling with LLMs",
+    sub:"Women in Tech Global Conference" },
+
+  { year:2024, type:"patent", title:"Deep Navigation via a Multimodal Vector Model",
+    sub:"US 12,130,809 \u00b7 Issued October 2024 \u00b7 Assignee eBay", status:"Issued",
+    link:"https://patents.google.com/patent/US12130809B2/en" },
+
+  { year:2024, type:"patent", title:"Visual Search Pivot Generation",
+    sub:"Filed August 2024 \u00b7 Assignee eBay", status:"Filed" },
+
+  { year:2024, type:"talk", title:"Embedding evaluation for e-commerce search",
+    sub:"Data Science Salon" },
+
+  { year:2024, type:"award", title:"Young Scientists Award",
+    sub:"Merchants Chamber of Uttar Pradesh" },
+
+  { year:2023, type:"patent", title:"Generating Diverse Search Results for Presenting to a User",
+    sub:"US 11,720,947 \u00b7 Issued August 2023 \u00b7 Assignee eBay", status:"Issued",
+    link:"https://patents.google.com/patent/US11720947B2/en" },
+
+  { year:2023, type:"patent", title:"Visual Search Query Intent Extraction and Search Refinement",
+    sub:"Filed December 2023 \u00b7 Assignee eBay", status:"Filed" },
+
+  { year:2022, type:"talk", title:"Women in Machine Learning",
+    sub:"Workshop at NeurIPS" },
+
+  { year:2020, type:"paper", title:"Addressing Purchase Impression Gap through a Sequential Re-ranker",
+    sub:"Tandon, Kaushik, Mysore, Hariharan, Kumar",
+    link:"https://arxiv.org/abs/2010.14570" },
+
+  { year:2019, type:"paper", title:"Influence of Neighborhood on the Preference of an Item in eCommerce Search",
+    sub:"IEEE International Conference on Big Data" },
+
+  { year:2018, type:"paper", title:"Controlling Personality Based Stylistic Variation with Neural Natural Language Generators",
+    sub:"SIGDIAL \u00b7 Oraby, Reed, Tandon, Sharath, Lukin, Walker",
+    link:"https://aclanthology.org/W18-5019/" },
+
+  { year:2018, type:"paper", title:"Neural MultiVoice Models for Expressing Novel Personalities in Dialog",
+    sub:"Oraby, Reed, Tandon, Sharath, Lukin, Walker" }
+
+];
+/* ===================== stop editing here ===================== */
+
+(function(){
+  var LABEL = { patent:"Patent", paper:"Paper", talk:"Talk", award:"Award" };
+  var ledger = document.getElementById("ledger");
+  var count  = document.getElementById("count");
+  var btns   = document.querySelectorAll(".filters button");
+
+  function esc(t){
+    return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  RECORD.forEach(function(it){
+    var row = document.createElement("div");
+    row.className = "entry";
+    row.dataset.type = it.type;
+
+    var title = it.link
+      ? '<a href="' + esc(it.link) + '">' + esc(it.title) + '</a>'
+      : esc(it.title);
+    var status = it.status
+      ? ' <span class="status">' + esc(it.status) + '</span>'
+      : '';
+
+    row.innerHTML =
+      '<div class="yr">' + esc(it.year) + '</div>' +
+      '<div>' +
+        '<span class="tag t-' + esc(it.type) + '">' + (LABEL[it.type] || "") + '</span>' +
+        '<p class="title">' + title + status + '</p>' +
+        '<p class="sub">' + esc(it.sub || "") + '</p>' +
+      '</div>';
+
+    ledger.appendChild(row);
+  });
+
+  var entries = ledger.querySelectorAll(".entry");
+
+  function apply(f){
+    var shown = 0;
+    entries.forEach(function(el){
+      var match = (f === "all") || (el.dataset.type === f);
+      el.hidden = !match;
+      if(match) shown++;
+    });
+    count.textContent = shown + (shown === 1 ? " entry" : " entries");
+    btns.forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.dataset.f === f));
+    });
+  }
+
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){ apply(b.dataset.f); });
+  });
+
+  apply("all");
+})();
+</script>
+
+</body>
+</html>
