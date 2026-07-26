@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shubhangi Tandon — Applied AI Research</title>
 <meta name="description" content="Applied AI research leader working on multimodal search, retrieval, and generative AI for commerce.">
+<meta property="og:title" content="Shubhangi Tandon — Applied AI Research">
+<meta property="og:description" content="Applied AI research leader working on multimodal search, retrieval, and generative AI for commerce.">
+<meta property="og:image" content="https://shubhangitandon.com/headshot.jpg">
+<meta property="og:url" content="https://shubhangitandon.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -71,6 +77,20 @@
   .meta a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule);}
   .meta a:hover{color:var(--signal);border-color:var(--signal);}
   .rule{height:1px;background:var(--rule);border:0;margin:0;}
+  .masthead{
+    display:grid;
+    grid-template-columns:1fr 164px;
+    gap:0 44px;
+    align-items:start;
+  }
+  .portrait{
+    width:164px;
+    height:164px;
+    object-fit:cover;
+    display:block;
+    border-radius:2px;
+    border:1px solid var(--rule);
+  }
 
   /* ---------- sections ---------- */
   section{padding:52px 0;}
@@ -213,6 +233,8 @@
     .entry{grid-template-columns:56px 1fr;gap:0 14px;}
     header{padding-top:44px;}
     section{padding:40px 0;}
+    .masthead{grid-template-columns:1fr;}
+    .portrait{order:-1;width:104px;height:104px;margin:0 0 26px;}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important;animation:none !important;}
@@ -222,15 +244,18 @@
 <body>
 
 <header>
-  <div class="wrap">
-    <p class="eyebrow">Applied AI Research</p>
-    <h1>Shubhangi Tandon</h1>
-    <p class="thesis">I work on how people find things. Multimodal search, retrieval, and generative AI for commerce, and the slow work of getting a model from <em>promising</em> to <em>in production</em>.</p>
-    <p class="meta">Senior Manager, Applied Research at eBay &nbsp;·&nbsp; San Francisco Bay Area<br>
-      <a href="https://www.linkedin.com/in/shubhangi-tandon/">LinkedIn</a> &nbsp;·&nbsp;
-      <a href="https://scholar.google.com/citations?user=nGt-duQAAAAJ">Google Scholar</a> &nbsp;·&nbsp;
-      <a href="mailto:shubhi194@gmail.com">Email</a>
-    </p>
+  <div class="wrap masthead">
+    <div>
+      <p class="eyebrow">Applied AI Research</p>
+      <h1>Shubhangi Tandon</h1>
+      <p class="thesis">I work on how people find things. Multimodal search, retrieval, and generative AI for commerce, and the slow work of getting a model from <em>promising</em> to <em>in production</em>.</p>
+      <p class="meta">Senior Manager, Applied Research at eBay &nbsp;·&nbsp; San Francisco Bay Area<br>
+        <a href="https://www.linkedin.com/in/shubhangi-tandon/">LinkedIn</a> &nbsp;·&nbsp;
+        <a href="https://scholar.google.com/citations?user=nGt-duQAAAAJ">Google Scholar</a> &nbsp;·&nbsp;
+        <a href="mailto:shubhi194@gmail.com">Email</a>
+      </p>
+    </div>
+    <img class="portrait" src="headshot.jpg" alt="Shubhangi Tandon" width="164" height="164" decoding="async">
   </div>
 </header>
 
@@ -243,6 +268,7 @@
     <p>Before managing I spent six years as a researcher on search: embedding based retrieval, ranking, visual search, and natural language understanding of queries. Most of what I have built sits in the gap between a model that works in a notebook and a system that serves millions of people under a latency budget. That gap is where I find the work interesting, and it is where most research quietly dies.</p>
     <p>Lately I have been building research infrastructure as much as models. Autonomous training and evaluation running as reusable skills on our own GPUs, and tooling that reads experiment logs and suggests what to try next. Research teams lose more time between experiments than during them.</p>
     <p>Earlier: a master's at UC Santa Cruz, where I worked in the Natural Language and Dialogue Systems Lab on stylistic variation in language generation, and four years at Goldman Sachs building compliance systems.</p>
+    <p>In my spare time I love running after my toddler and relearning life. I often find myself thinking about the world we are building for the next generation.</p>
   </div>
 </section>
 
